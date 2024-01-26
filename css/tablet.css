@@ -1,0 +1,26 @@
+@media (max-width: 840px) {
+  .contact_section2 {
+    padding-inline: 24px;
+  }
+  .contact_div_with_iframe {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  .contact_div_with_iframe,
+  .contact_section2_main_div,
+  .contact_div_contactinfo,
+  .contact_div_with_iframe iframe {
+    width: 100%;
+  }
+  .contact_div_contactinfo p {
+    display: none;
+  }
+  .contact_div_contactinfo {
+    display: flex;
+    justify-content: center;
+    column-gap: 16%;
+  }
+  .contact_div_contactinfo_middle_div {
+    margin: 0;
+  }
+}

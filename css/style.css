@@ -25,6 +25,7 @@ header {
 
 .header_nav_ul {
   display: flex;
+  column-gap: 60px;
 }
 
 .header_nav_ul li a {
@@ -33,13 +34,18 @@ header {
   font-size: 18px;
   font-weight: 400;
 }
+.header_nav_ul li a:hover{
+  color: cadetblue;
+}
+
 #active_color {
   color: rgba(213, 144, 110, 1);
 }
 
-.middle_header_nav_ul_li {
-  margin: 0 60px;
+.header_logo_responsive {
+  display: none;
 }
+
 .header_rightSide_div {
   display: flex;
   column-gap: 16px;
@@ -49,11 +55,19 @@ header {
   color: #ffffff;
   font-size: 24px;
 }
+.shopping:hover{
+  color: cadetblue;
+}
+
 .header_rightSide_div p {
   color: rgba(255, 255, 255, 1);
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
+}
+
+.header_rightSide_div p:hover {
+  color: cadetblue;
 }
 
 .section1 {
@@ -62,6 +76,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
 }
 
 .section1 div {
@@ -80,13 +97,18 @@ header {
   font-size: 40px;
   font-weight: 700;
   line-height: 48px;
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  from {color: #fff;}
+  to {color: brown;}
 }
 
 .section1 div button {
   display: flex;
   width: 168px;
   height: 48px;
-  padding: 12px 45px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
@@ -104,10 +126,10 @@ header {
   line-height: 24px;
 }
 
+
 .section2 {
   display: flex;
   height: 664px;
-  padding: 120px 426px;
   justify-content: center;
   align-items: center;
   background-color: #ea904f;
@@ -115,10 +137,8 @@ header {
 
 .section2_main_div {
   display: grid;
-
   width: 588px;
-  height: 424px;
-  grid-template-columns: 282px 282px;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 200px 200px;
   grid-gap: 24px;
 }
@@ -127,8 +147,6 @@ header {
 .section2_main_div_div2,
 .section2_main_div_div3,
 .section2_main_div_div4 {
-  width: 282px;
-  height: 200px;
   border-radius: 24px;
   display: flex;
   justify-content: center;
@@ -137,25 +155,34 @@ header {
 
 .section2_main_div_div1 {
   background-image: url("../imgs/Rectangle1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .section2_main_div_div2 {
   background-image: url("../imgs/Rectangle2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .section2_main_div_div3 {
   background-image: url("../imgs/Rectangle3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .section2_main_div_div4 {
   background-image: url("../imgs/Rectangle4.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .section2_main_div_div1 button,
 .section2_main_div_div2 button,
 .section2_main_div_div3 button,
 .section2_main_div_div4 button {
-  display: inline-flex;
   padding: 8px 30px;
-  justify-content: center;
-  align-items: center;
   border: none;
   border-radius: 8px;
   background-color: #fff;
@@ -167,14 +194,12 @@ header {
 }
 
 .section3 {
-  height: 642px;
   background-color: #402101;
   padding: 120px;
 }
 
 .section3_top_p {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   color: #fff;
   font-family: "Inter", sans-serif;
   font-size: 40px;
@@ -186,8 +211,6 @@ header {
   margin-top: 40px;
   display: flex;
   column-gap: 24px;
-  overflow: auto;
-  white-space: nowrap;
 }
 
 .section3_main_div_div {
@@ -196,10 +219,16 @@ header {
   padding: 16px;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
   gap: 16px;
   border-radius: 8px;
   background-color: #fff;
+  width: 100%;
+}
+
+.section3_main_div_div img {
+  width: 100%;
+  height: 184px;
+  object-fit: cover;
 }
 
 .section3_card_desc h6 {
@@ -209,11 +238,13 @@ header {
   font-weight: 700;
   line-height: 26px;
 }
-.section3_card_desc p,
-.section3_card_desc button {
+
+.price_button {
+  width: 100%;
   margin-top: 24px;
-  display: inline-flex;
-  vertical-align: bottom;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .section3_card_desc p {
@@ -222,14 +253,10 @@ header {
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
-  margin-right: 130px;
 }
 
 .section3_card_desc button {
-  display: inline-flex;
   padding: 6px 19px;
-  justify-content: center;
-  align-items: center;
   border: none;
   border-radius: 8px;
   background: #b53b1b;
@@ -243,16 +270,20 @@ header {
 .section4 {
   height: 480px;
   background-image: url("../imgs/section4img.png");
-  padding: 160px 477px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .section4_main_div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  row-gap: 56px;
 }
 
 .section4_main_div p {
@@ -261,13 +292,13 @@ header {
   font-family: "Inter", sans-serif;
   font-size: 40px;
   font-weight: 700;
-  margin-bottom: 56px;
 }
 .section4 form {
   display: flex;
+  width: 482px;
 }
 .section4 form input {
-  width: 331px;
+  width: 100%;
   height: 56px;
   padding-left: 16px;
   border-radius: 10px 0px 0px 10px;
@@ -359,6 +390,10 @@ footer nav ul li a {
   justify-content: center;
   align-items: center;
   row-gap: 47px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .section1_about h2 {
@@ -372,15 +407,16 @@ footer nav ul li a {
 }
 .section1_about form {
   display: flex;
-  height: 56px;
-  align-items: center;
+
   border-radius: 10px;
+  width: 588px;
+  border: 2px solid #fff;
 }
 
 .section1_about form input {
   padding-left: 16px;
   height: 56px;
-  width: 408px;
+  width: 100%;
   border-radius: 10px 0 0 10px;
   border: 2px solid #fff;
   background: #f5f5f5;
@@ -411,7 +447,6 @@ footer nav ul li a {
   background: #ea904f;
   display: flex;
   flex-direction: column;
-  height: 1585px;
   padding: 120px;
   justify-content: center;
   gap: 72px;
@@ -452,28 +487,26 @@ footer nav ul li a {
 
 .section2_about_second_div {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  overflow: hidden;
+
   row-gap: 40px;
   column-gap: 24px;
+
+  flex-wrap: wrap;
 }
 .section2_about_second_div article {
   display: flex;
-  width: 384px;
+  flex: 1 1 384px;
   padding: 16px;
   flex-direction: column;
   justify-content: center;
   gap: 16px;
-  height: 339px;
   border-radius: 8px;
   background: #fff;
 }
 .img_width_height {
   width: 100%;
-  height: 100%;
+  height: 224px;
+  object-fit: cover;
 }
 .price {
   display: flex;
@@ -530,21 +563,23 @@ footer nav ul li a {
 
 .contact_section1 {
   background-image: url(../imgs/Rectangle\ 108.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 720px;
   padding-left: 222px;
-  justify-content: start;
-  padding-top: 160px;
- 
+  display: flex;
+  align-items: center;
 }
 
 .contact_section1 h2 {
-    color: #fff;
-    font-family: "Inter", sans-serif;
-    font-size: 40px;
-    font-weight: 400;
-    line-height: 48px;
-    margin-bottom: 40px;
-  }
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  margin-bottom: 40px;
+}
 
 .contact_section1 form {
   width: 500px;
@@ -617,18 +652,13 @@ textarea::placeholder {
 
 .contact_section2 {
   display: flex;
-  height: 648px;
-  padding: 120px 324px;
+  padding-block: 120px;
   justify-content: center;
   align-items: center;
   background: #ea904f;
 }
 
-.contact_section2_main_div {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
+
 
 .contact_section2_main_div h2 {
   color: #fff;
@@ -637,6 +667,7 @@ textarea::placeholder {
   font-size: 40px;
   font-weight: 700;
   line-height: 48px;
+  text-align: center;
 }
 
 .contact_div_with_iframe {
@@ -666,4 +697,9 @@ textarea::placeholder {
 
 .contact_div_contactinfo_middle_div {
   margin: 72px auto;
+}
+
+button:hover {
+  transition-duration: 1.5s;
+  text-shadow: 2px 1px 2px #1b0e01;
 }
